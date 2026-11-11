@@ -18,6 +18,16 @@ npm run lint
 **Demo account:** `demo@zruky.app` / `demo1234` — or press **Use demo** on the login page.
 It comes with its own listings (active and sold), favorites and ongoing conversations.
 
+## Deploying to Render (Docker)
+
+The repo includes a `Dockerfile` (builds with Node, serves with nginx on Render's `$PORT`) and a `render.yaml` Blueprint.
+
+1. Render dashboard → **New → Blueprint** → pick this repository → **Apply**.
+2. Render builds the image and starts it; no build or start command is needed.
+3. Health check: `/health`. Every push to the branch redeploys automatically.
+
+Run the same image locally: `docker build -t zruky . && docker run -p 8080:8080 zruky` → http://localhost:8080
+
 ## Features
 
 | Area | What works |

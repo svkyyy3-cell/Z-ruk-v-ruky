@@ -1,0 +1,9 @@
+# Render "Blueprint": lets Render set up the website from this file.
+# Render dashboard -> New -> Blueprint -> pick this repository -> Apply.
+services:
+  - type: web
+    name: zruky
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true            # every push to GitHub redeploys the site
